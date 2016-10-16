@@ -7,7 +7,7 @@ public class Calculator {
 			return 0;
 		}
 		else if(text.contains(",")){
-			return sum(splitNumbers(text));
+				return sum(splitNumbers(text));
 		}
 		else
 			return 1;
@@ -32,3 +32,11 @@ public class Calculator {
 
 
 }
+
+
+
+
+
+
+
+
