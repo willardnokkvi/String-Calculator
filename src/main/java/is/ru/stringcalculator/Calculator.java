@@ -6,14 +6,11 @@ public class Calculator {
 		if (text.equals("")){
 			return 0;
 		}
-		else if(text.contains(",")){
+		else if(text.contains(",") || (text.contains("|\n"))){
 				return sum(splitNumbers(text));
 		}
-		else if (text.contains("|\n")){
-			return sum(splitNumbers(text));
-		}
 		else
-			return 1;
+			return toInt(text);
 	}
 
 	private static int toInt(String number){
@@ -26,12 +23,16 @@ public class Calculator {
       
     private static int sum(String[] numbers){
  	    int total = 0;
+ 	    int currentNumber = 0;
         for(String number : numbers){
-		    total += toInt(number);
+		    currentNumber = toInt(number);
+		    if (currentNumber <= 1000){
+		    	total += currentNumber;
+		    }
 		}
+
 		return total;
     }
-
 
 }
 
